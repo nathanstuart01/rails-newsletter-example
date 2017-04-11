@@ -1,0 +1,11 @@
+%h1 Send a Newsletter
+%hr
+
+= form_tag newsletter_index_path do
+  = label_tag "Subject"
+  = text_area_tag "subject", nil, placeholder: 'Subject', cols: '20', rows: '5', required: true
+  = label_tag "Emails (*comma separated)"
+  = text_area_tag "emails", nil, placeholder: 'test@test.com, test2@test.com', required: true, cols: '20', rows: '5'
+  = label_tag "Newsletter Type"
+  = select_tag "newsletter", options_for_select(['weekly', 'monthly', 'yearly'])
+  = submit_tag "Send"
